@@ -58,9 +58,17 @@ export default function authReducer(state = initialState, action) {
 }
 ```
 
-Follow the same pattern for `artist-reducer.js`
+Follow the same pattern for `artist-reducer.js`.
 
-- The initial state for `artist-reducer`.
+Here is the initial state for `artist-reducer`:
+
+```js
+const initialState = {
+  currentArtist: null,
+  status: "loading",
+  error: null,
+};
+```
 
 Inside `store.js`, we'll do our typical Redux store boilerplate:
 
