@@ -35,7 +35,3 @@ export default App;
 Use the React Router documentation, as well as previous workshops, to create a route for `/artists/:id`, and a `<Redirect>` that otherwise sends users to `/artists/${DEFAULT_ARTIST_ID}`.
 
 Create a new component, `ArtistRoute`, which will be rendered when the artist path matches.
-
-> To make life a bit easier, you can use the terminal command `yarn nc ComponentName`. For example, in this case, you can run `yarn nc ArtistRoute`. It will create the correct component structure for you.
->
-> `nc` stands for "New Component". This functionality comes from an NPM package called `new-component` (https://www.npmjs.com/package/new-component).
