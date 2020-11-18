@@ -8,7 +8,7 @@ Create a few new files:
 - `src/store.js`
 - `src/actions.js`
 
-For this workshop, here are the types of data we'll be dealing with:
+For this workshop, here is what we will need to do:
 
 - We need to hit our server to get an API key
 - We need to hit Spotify's API to get artist information
