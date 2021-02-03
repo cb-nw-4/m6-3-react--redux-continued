@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const fetch = require('isomorphic-fetch')
 
 const app = new express();
 const port = 5678;
@@ -19,7 +20,19 @@ app.get('/spotify_access_token', (req, res, next) => {
   );
 
   // TODO: use authString in a request to Spotify!
-  res.send({ todo: true });
+  fetch('https://accounts.spotify.com/api/token', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Basic ${authString}`,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'grant_type=client_credentials'
+  })
+    .then((response) => response.json())
+    .then((json) => res.send(json))
+    .catch(() => {
+      // Do something to catch error
+    });
 });
 
 app.listen(port, function(error) {
