@@ -8,21 +8,23 @@ import {
 } from "react-router-dom";
 import ArtistPage from "./ArtistPage";
 
-const DEFAULT_ARTIST_ID = "7BMccF0hQFBpP6417k1OtQ";
-
 const App = () => {
+  const DEFAULT_ARTIST_ID = "7BMccF0hQFBpP6417k1OtQ";
   return (
-    <GlobalStyles>
+    <>
+      <GlobalStyles/>
       <Router>
         <Switch>
+          <Route exact path="/">
+            <div>hello</div>
+          </Route>
           <Route exact path="/artists/:id">
             <ArtistPage />
           </Route>
           <Redirect to={`/artists/${DEFAULT_ARTIST_ID}`} />
         </Switch>
       </Router>
-      ;
-    </GlobalStyles>
+    </>
   );
 };
 
