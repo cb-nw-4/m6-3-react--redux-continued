@@ -30,7 +30,6 @@ app.get('/spotify_access_token', async (req, res, next) => {
   });
 
   const json = await response.json();
-  console.log(json);
   return res.send(json);
 });
 
