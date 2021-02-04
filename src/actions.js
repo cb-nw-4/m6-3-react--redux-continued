@@ -10,3 +10,17 @@ export const receiveAccessToken=(token)=>({
 export const receiveAccessTokenError=()=>({
     type: "RECEIVE_ACCESS_TOKEN_ERROR",
 });
+
+export const requestCurrentArtist=()=>({
+    type:"REQUEST_CURRENT_ARTIST",
+});
+
+export const receiveCurrentArtist=(profile)=>({
+    type: "RECEIVE_CURRENT_ARTIST",
+    profile,
+});
+
+export const receiveCurrentArtistError=(error)=>({
+    type: "RECEIVE_CURRENT_ARTIST_ERROR",
+    error,
+});

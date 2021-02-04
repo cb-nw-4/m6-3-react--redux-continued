@@ -34,9 +34,9 @@ const App = () => {
     <>
       <Router>
         <Switch>
-        <Router path='/artists/:id'>
+        <Route path='/artists/:id'>
           <ArtistRoute />
-        </Router>
+        </Route>
         <Redirect to={`/artists/${DEFAULT_ARTIST_ID}`}/>
         </Switch>
       </Router>
