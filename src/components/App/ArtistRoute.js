@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchArtistprofile } from "../../helpers/api-helpers";
 import {
@@ -26,7 +26,6 @@ const ArtistRoute = () => {
         let fetched = await fetchArtistprofile(accessToken, artistId);
 
         dispatch(receiveCurrentArtist(fetched));
-        
       } catch {
         console.error("error404");
       }
@@ -36,32 +35,73 @@ const ArtistRoute = () => {
 
   console.log(artistMainData);
 
-
-    console.log(artistData);
-  return artistMainData && <Wrapper>
-      <Header>
+  console.log(artistData);
+  return (
+    artistMainData && (
+      <Wrapper>
+        <Header>
           <ProfilePicture src={artistMainData.profile.images[0].url} />
-          <ProfileName> {artistMainData.profile.name}</ProfileName> 
-       </Header>
-       <Followers>{artistMainData.profile.followers.total}</Followers>
-       <Genres>{artistMainData.profile.genres.map((genre)=> {
-           return <div>{genre}</div>
-       })}</Genres>
-       </Wrapper>;
+          <ProfileName> {artistMainData.profile.name}</ProfileName>
+        </Header>
+        <Followers>
+          <NumFollower>{artistMainData.profile.followers.total}</NumFollower>
+          Followers
+        </Followers>
+        <TagContainer>
+          <TagTitle>tags</TagTitle>
+          <Tags>
+          <Genres >{artistMainData.profile.genres[0]}</Genres>
+          <Genres >{artistMainData.profile.genres[1]}</Genres>
+        </Tags>
+        </TagContainer>
+      </Wrapper>
+    )
+  );
 };
 
-
-const Wrapper = styled.div``;
-const Header =styled.div`
-display:flex;
-flex-direction:column;
+const Wrapper = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 812px;
+  width: 375px;
 `;
-const Followers = styled.div``;
-const Genres = styled.div``;
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 const ProfilePicture = styled.img`
-height: 200px;
-width: 200px;
-border-radius: 1000px;
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  padding: 10px;
 `;
 const ProfileName = styled.h1``;
+const Followers = styled.div``;
+const NumFollower = styled.span`
+  color: #ff4fd8;
+`;
+const TagContainer = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+`;
+const Tags = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+const TagTitle = styled.h2``;
+
+const Genres = styled.div`
+  background-color: #4b4b4b;
+  margin:20px;
+  border-radius:15px;
+  padding:10px;
+`;
+
 export default ArtistRoute;

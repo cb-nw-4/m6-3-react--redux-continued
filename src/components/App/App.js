@@ -49,5 +49,9 @@ const App = () => {
     </Wrapper>
   );
 };
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+background-color: #0B0F14;
+max-height:812px;
+max-width:375px;
+`;
 export default App;
