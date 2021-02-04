@@ -1,3 +1,9 @@
+// import { useDispatch } from "react-redux";
+// import {
+//     receiveCurrentArtist,
+//     requestCurrentArtist,
+//     receiveCurrentArtistError,
+//   } from "../actions";
 export function fetchArtistprofile(token, artistId) {
   const options = {
     headers: { Authorization: `Bearer ${token}` },
