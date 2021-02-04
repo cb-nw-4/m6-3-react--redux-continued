@@ -13,7 +13,6 @@ export default function artistReducer(state = initialState, action){
             }
         }
         case 'RECEIVE_CURRENT_ARTIST' :{
-            console.log("yaaaas", action);
             return {
                 ...state,
                 status:'idle',
