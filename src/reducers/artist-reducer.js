@@ -17,7 +17,7 @@ export default function artistReducer(state = initialState, action){
                 ...state,
                 status:'idle',
                 currentArtist:{
-                    'profile':action.profile,
+                    profile: action.profile,
                 },
             }
         }
@@ -25,6 +25,17 @@ export default function artistReducer(state = initialState, action){
             return {
                 ...state,
                 error:action.error,
+            }
+        }
+        case 'RECEIVE_RELATED_ARTISTS':{
+            return {
+                ...state,
+                currentArtist:{
+                    profile:{
+                        ...state.currentArtist.profile,
+                    },
+                relatedArtists: action.artists,
+                }
             }
         }
         default: {

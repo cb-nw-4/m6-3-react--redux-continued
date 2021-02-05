@@ -20,3 +20,15 @@ export function makeFriendly(num){
         return intlFormat(num/1000)+'k';
     return intlFormat(num);
 }
+
+export function fetchRelatedArtists(token, artistId) {
+    const options = {
+        headers: { Authorization: `Bearer ${token}` },
+    };
+
+    const url = `https://api.spotify.com/v1/artists/${artistId}/related-artists`;
+
+    return fetch(url, options)
+            .then((response) => response.json())
+            .catch(err=>console.log(err));
+}

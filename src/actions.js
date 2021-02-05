@@ -24,3 +24,8 @@ export const receiveCurrentArtistError=(error)=>({
     type: "RECEIVE_CURRENT_ARTIST_ERROR",
     error,
 });
+
+export const receiveRelatedArtists=(artists)=>({
+    type: "RECEIVE_RELATED_ARTISTS",
+    artists,
+});

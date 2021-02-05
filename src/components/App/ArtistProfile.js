@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import GlobalStyles from '../GlobalStyles';
+import ArtistRoll from './ArtistRoll';
 
 const ArtistProfile=({
     imageURL,
     artistName,
     followers,
     genre,
+    otherArtists,
 }) => {
-    console.log(genre);
+    // console.log(otherArtists);
     return(
         <Wrapper>
             <Header>
@@ -21,23 +22,25 @@ const ArtistProfile=({
                     top tracks
                 </Label>
             </Tracks>
+            <Label>
+                tags
+            </Label>
             <Tags id="tags">
-                <Label>
-                    tags
-                </Label>
-                {genre.map(elem=>{
+                {genre.map((elem, i)=>{
                     return (
-                        <Genre>{elem}</Genre>
+                        <Genre key={i}>{elem}</Genre>
                     )
                 })}
             </Tags>
+            {otherArtists && 
+                <ArtistRoll artistList={otherArtists.artists}/>
+            }
         </Wrapper>
     )
 };
 
 const Wrapper=styled.div`
     width: 375px;
-    height: 812px;
     background: #0B0F14;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -60,7 +63,6 @@ const Image=styled.img`
 
 const Name=styled.p`
     width: 268px;
-    height: 59px;
     font-family: Montserrat;
     font-style: normal;
     font-weight:bold;
@@ -70,7 +72,8 @@ const Name=styled.p`
     text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.75), 0px 4px 4px rgba(0, 0, 0, 0.5), 4px 8px 25px #000000;
     margin-block-start: 0.4em;
     margin-block-end: 0.4em;
-    margin-inline-start: 0px
+    margin-inline-start: 0px;
+    text-align:center;
 `;
 
 const Followers=styled.p`
@@ -98,13 +101,17 @@ const Label=styled.p`
     line-height: 26px;
     text-transform: lowercase;
     color: #FFFFFF;
-    transform: rotate(0.08deg);
     text-align:center;
+
 `;
 
 const Tags=styled.section`
     height:auto;
     width:auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
 `;
 
 const Genre=styled.span`
@@ -117,6 +124,7 @@ const Genre=styled.span`
     border-radius: 4px;
     text-align:center;
     margin:5px;
+
 `;
 
 export default ArtistProfile;
