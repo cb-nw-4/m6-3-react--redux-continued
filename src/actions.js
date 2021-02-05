@@ -4,9 +4,22 @@ export const requestAccessToken = () => ({
 
 export const receiveAccessToken = (token) => ({
   type: 'RECEIVE_ACCESS_TOKEN',
-  token
+  token: token
 });
 
 export const receiveAccessTokenError = () => ({
   type: 'RECEIVE_ACCESS_TOKEN_ERROR'
+});
+
+export const requestArtistProfile = () => ({
+  type: 'REQUEST_ARTIST_PROFILE'
+});
+
+export const receiveArtistProfile = (currentArtist) => ({
+  type: 'RECEIVE_ARTIST_PROFILE',
+  currentArtist: currentArtist
+});
+
+export const receiveArtistProfileError = () => ({
+  type: 'RECEIVE_ARTIST_PROFILE_ERROR'
 });

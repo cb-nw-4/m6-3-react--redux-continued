@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     vertical-align: baseline;
   }
-
+  
   /* GLOBAL STYLES */
   *,
   *:before,
