@@ -261,7 +261,6 @@ const ArtistsList = styled.ul`
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
-
     
 `
 

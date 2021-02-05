@@ -12,12 +12,7 @@ span {
     border: 0;
     vertical-align: baseline;
 
-    /* 2436x1125px at 458ppi */
-@media only screen 
-    and (device-width: 375px) 
-    and (device-height: 812px) 
-    and (-webkit-device-pixel-ratio: 3) {
-        background-color: ${COLORS.Charcoal};
+    background-color: ${COLORS.Charcoal};
 
     h2, h3{
         font-weight: 700;
@@ -29,7 +24,24 @@ span {
 
     }
 
+    /* iPhone X ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+    body{
+        display: grid;
+        align-items: center;
+        justify-content: center;
     }
+
+
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+/* Styles */
+    
+}
+
+    
 
 }
 
