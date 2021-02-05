@@ -15,7 +15,6 @@ import {
   receiveAccessTokenError
 } from '../../actions';
 
-// const DEFAULT_ARTIST_ID = '11Y54BxlxC3UIAUkU2eadQ';
 const DEFAULT_ARTIST_ID = '6eJqAWJdd8JhAN1pQGie4r';
 
 

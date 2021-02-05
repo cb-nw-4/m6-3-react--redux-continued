@@ -71,7 +71,6 @@ const ArtistRoute = () => {
 
 const Wrapper = styled.div`
   width: 100hw;
-  height: 100vh;
   padding-top: 50px;
   text-align: center;
   color: white;
@@ -93,6 +92,7 @@ const ArtistName = styled.div`
   top: -50px;
   font-size: 3rem;
   font-weight: 600;
+  background-color: transparent;
 `;
 
 const Followers = styled.div`
@@ -115,7 +115,7 @@ const TagsTitle = styled.div`
 const TagContainer = styled.div`
   width: 80%;
   display: inline-flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding-top: 30px;
 `;
 
