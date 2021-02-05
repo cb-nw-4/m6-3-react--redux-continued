@@ -9,7 +9,7 @@ const port = 5678;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/spotify_access_token', (req, res, next) => {
+app.get('/spotify_access_token', async (req, res, next) => {
   const clientId = process.env.SPOTIFY_CLIENT_ID;
   const clientSecret = process.env.SPOTIFY_SECRET;
 
