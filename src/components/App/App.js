@@ -34,15 +34,13 @@ const App = () => {
     <Wrapper>
       <Router>
         <Switch>
-          {/* <Route path="artist:id">
+          <Route path="/artist/:artistId">
             <ArtistRoute />
-          </Route> */}
-          {/* <Route exact path="/">
+          </Route> 
+           <Route exact path="/">
             <Redirect to={`/artist/${DEFAULT_ARTIST_ID}`} />
-          </Route> */}
-               <Route path={`/artist/${DEFAULT_ARTIST_ID}`} >
-            <ArtistRoute />
           </Route>
+       
         </Switch>
       </Router>
       <GlobalStyle />
@@ -50,8 +48,8 @@ const App = () => {
   );
 };
 const Wrapper = styled.div`
-background-color: #0B0F14;
-max-height:812px;
-max-width:375px;
+  background-color: #0b0f14;
+  height: 812px;
+  width: 375px;
 `;
 export default App;
