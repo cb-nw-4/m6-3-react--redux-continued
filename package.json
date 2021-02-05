@@ -1,6 +1,7 @@
 {
   "name": "react-workshop-spotify-client",
   "version": "0.1.0",
+  "proxy": "http://localhost:5678",
   "private": true,
   "scripts": {
     "start": "concurrently -p \"[{name}]\" -n \"CLIENT,SERVER\" -c \"bgBlue.bold,bgMagenta.bold,bgGreen.bold\" \"yarn run start:client\" \"yarn run start:server\"",
