@@ -41,8 +41,6 @@ const ArtistRoute = ()=>{
         return <CircularProgress/>;
     }
 
-    console.log("currentArtist",currentArtist);
-
     return ( 
         <Wrapper>
             <Avatar src={currentArtist.profile.images[1].url} alt="artist avatar"/>
