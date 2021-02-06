@@ -50,28 +50,80 @@ const ArtistRoute = () => {
         artist === null? null:
         <Wrapper>
             <ImgBox>
-                <img src={artist.profile.images[1].url}/>
+                <Img src={artist.profile.images[0].url}/>
             </ImgBox>
-            <div>{artist.profile.name}</div>
-            <div>{formatedFollowers(artist.profile.followers.total)} followers</div>
-            <div>Tags</div>
-            { artist.profile.genres.map((tag)=><div key={tag}>{tag}</div>)}
+            <Name>{artist.profile.name}</Name>
+            <Followers><Num>{formatedFollowers(artist.profile.followers.total)}</Num> followers</Followers>
+            <TagSection>
+                <TagTitle>tags</TagTitle>
+                { artist.profile.genres.map((tag)=><Tag key={tag}>{tag}</Tag>)}
+            </TagSection>
+            
         </Wrapper>
     }
   </>
   
 );};
-
+const Tag=styled.div`
+    font-size:11px;
+    background-color:rgba(75, 75, 75, 0.4);
+    border-radius: 4px;
+    padding: 6px 16px;
+    margin: 10px;
+    `;
+const TagTitle=styled.div`
+    font-weight:600;
+    font-size:21px;
+    line-height:26px;
+`;
+const TagSection=styled.div`
+    position: absolute;
+    top:478px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width:100%;
+`;
+const Num=styled.div`
+    color:#FF4FD8;
+    margin-right: 5px;
+    font-weight:600;
+`;
+const Followers=styled.div`
+    position:absolute;
+    top:257px;
+    display: flex;
+    flex-direction: row;
+`;
+const Name = styled.div`
+    font-weight:600;
+    font-size:48px;
+    position: absolute;
+    top:173px;
+    line-height:58.51px;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.75), 0px 4px 4px rgba(0, 0, 0, 0.5), 4px 8px 25px #000000;
+`;
 const Wrapper = styled.div`
     width:100vw;
     height:100vh;
-    background-color:black;
+    background-color:#0B0F14;
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
 const ImgBox = styled.div`
-
+    width: 175px;
+    height: 175px;
+    top: 59px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 190.5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+`;
+const Img = styled.img`
+    width: 100%;
 `;
 
 
