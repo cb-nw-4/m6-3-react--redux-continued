@@ -10,3 +10,17 @@ export const requestAccessToken = () => ({
   export const receiveAccessTokenError = () => ({
     type: "RECEIVE_ACCESS_TOKEN_ERROR",
   });
+
+  //ARTIST
+  export const requestArtistInfo = () => ({
+      type: 'REQUEST_ARTIST_INFO',
+  });
+
+  export const receiveArtistInfo = (info) => ({
+    type: 'RECEIVE_ARTIST_INFO',
+    info,
+});
+
+export const receiveArtistError = () => ({
+    type: 'RECEIVE_ARTIST_ERROR',
+});

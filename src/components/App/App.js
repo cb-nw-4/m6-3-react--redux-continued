@@ -16,7 +16,6 @@ const App = () => {
     fetch("/spotify_access_token")
       .then((res)=>res.json())
       .then((res)=>{
-        console.log(res);
         dispatch(receiveAccessToken(res.access_token));
       })
       .catch((error)=>{
