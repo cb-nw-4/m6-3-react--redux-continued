@@ -3,11 +3,10 @@ import { useSelector } from "react-redux";
 
 const ArtistRoute = () => {
     const accessToken = useSelector((state) => state.auth.token)
-    console.log(accessToken)
-
+    //console.log(accessToken)
     return (
         <>
-            {accessToken && accessToken.access_token }
+            {accessToken}
         </>
     )
 }
