@@ -72,13 +72,12 @@ const Tags = styled.p`
   color: white;
   font-size: 21px;
   font-weight: 600;
-  margin: 70px 0px 10px 0px;
+  margin-top: 70px;
 `;
 
 const GenreWrapper = styled.div` 
   display: flex;
   justify-content: space-evenly;
-  margin: 20px 0px;
 `;
 
 const GenreContainer = styled.div` 
