@@ -30,41 +30,49 @@ const Wrapper = styled.div`
   background-color: black;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
-  padding: 50px 0px 200px 0px;
+  padding: 50px 0px 250px 0px;
 `;
 
 const ArtistImage = styled.img` 
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
+  position: fixed;
+  z-index: 0;
 `;
 
 const ArtistName = styled.p` 
-  font-size: 40px;
+  font-size: 44px;
   color: white;
-  font-weight: 800;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+  margin-bottom: 15px;
 `;
 
 const FollowersContainer = styled.div` 
   display: flex;
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 600;
   color: white;
   margin: 0px;
   padding: 0px;
 `;
 
 const Followers = styled.p` 
-  font-size: 18px;
-  color: fuchsia;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FF4FD8;
   margin: 0px;
   padding: 0px 5px;
 `;
 
 const Tags = styled.p` 
   color: white;
+  font-size: 21px;
   font-weight: 600;
-  margin: 50px 0px 10px 0px;
+  margin: 70px 0px 10px 0px;
 `;
 
 const GenreWrapper = styled.div` 
@@ -77,17 +85,16 @@ const GenreContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  background-color: darkgray;
-  border: 1px solid blue;
+  border-radius: 4px;
+  background-color: #4B4B4B;
   padding: 0px 10px;
   margin: 0px 10px;
 `;
 
 const Genre = styled.p` 
-  font-size: 16px;
+  font-size: 11px;
   color: white;
-  font-weight: 800;
+  font-weight: 600;
   margin: 5px;
 `;
 
