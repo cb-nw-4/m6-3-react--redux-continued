@@ -16,7 +16,7 @@ const App = () => {
       .then((res) => res.json())
       .then((json) => {
         console.log(json)
-        dispatch(receiveAccessToken(json.access_token))  
+        dispatch(receiveAccessToken(json.access_token)) 
       })
       .catch((error) => {
         console.error(error)
@@ -31,7 +31,7 @@ const App = () => {
         <Route exact path="/">
           <Redirect to={`/artists/${DEFAULT_ARTIST_ID}`} />
         </Route>
-        <Route exact path="/artists/:id">
+        <Route path="/artists/:artistId">
           <ArtistRoute />
         </Route>
       </Switch>
