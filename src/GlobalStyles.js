@@ -1,5 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
+export const COLORS = {
+  primary: "#FF4FD8",
+  secondary: "#3354FF",
+  black: "#0B0F14",
+  gray: "#797F86",
+  white: "#FFFFFF",
+  grayFade: "rgba(75, 75, 75, 0.4)",
+};
+
 export default createGlobalStyle`
     html,
     body,
@@ -20,4 +29,3 @@ export default createGlobalStyle`
     font-family: Montserrat, sans-serif;
 }
 `;
-

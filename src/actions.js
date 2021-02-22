@@ -1,26 +1,25 @@
 export const requestAccessToken = () => ({
-    type: "REQUEST_ACCESS_TOKEN",
-    });
-
+  type: "REQUEST_ACCESS_TOKEN",
+});
 export const receiveAccessToken = (token) => ({
-    type: "RECEIVE_ACCESS_TOKEN",
-    token,
+  type: "RECEIVE_ACCESS_TOKEN",
+  token,
 });
 
 export const receiveAccessTokenError = () => ({
-    type: "RECEIVE_ACCESS_TOKEN_ERROR",
+  type: "RECEIVE_ACCESS_TOKEN_ERROR",
 });
 
-
-
-export const requestArtist = () => ({
-    type: "REQUEST_ARTIST",
+export const requestArtistInfo = () => ({
+  type: "REQUEST_ARTIST_INFO",
 });
 
-export const receiveArtist = () => ({
-    type: "RECEIVE_ARTIST",
+export const receiveArtistInfo = (artist) => ({
+  type: "RECEIVE_ARTIST_INFO",
+  artist,
 });
 
-export const receiveArtistError = () => ({
-    type: "RECEIVE_ARTIST-ERROR",
+export const receiveArtistInfoError = (error) => ({
+  type: "RECEIVE_ARTIST_INFO_ERROR",
+  error,
 });

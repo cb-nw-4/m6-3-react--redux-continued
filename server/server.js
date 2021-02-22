@@ -1,7 +1,7 @@
-const path = require('path');
-const express = require('express');
-const bodyParser = require('body-parser');
-const fetch = require('isomorphic-fetch')
+const path = require("path");
+const express = require("express");
+const bodyParser = require("body-parser");
+const fetch = require("isomorphic-fetch");
 const app = new express();
 const port = 5678;
 
@@ -20,19 +20,18 @@ app.get("/spotify_access_token", async (req, res, next) => {
 
   const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
+    body: "grant_type=client_credentials",
     headers: {
       Authorization: `Basic ${authString}`,
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: "grant_type=client_credentials",
   });
 
   const json = await response.json();
-
-  return res.send(json);
+  res.status(200).json(json);
 });
 
-app.listen(port, function(error) {
+app.listen(port, function (error) {
   if (error) {
     console.error(error);
   } else {

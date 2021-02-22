@@ -5,27 +5,30 @@ const initialState = {
 };
 
 export default function authReducer(state = initialState, action) {
-  console.log(currentArtist,"HHHHHHHHHHHHH")
   switch (action.type) {
-    case "REQUEST_ARTIST":{
+    case "REQUEST_ARTIST_INFO": {
       return {
         ...state,
-        status:"loading"
-      }
+        status: "loading",
+        error: null,
+      };
     }
-    case "RECEIVE_ARTIST":{
+    case "RECEIVE_ARTIST_INFO": {
       return {
         ...state,
-        status:"idle",
-        currentArtist:{action.currentArtist}
-      }
+        currentArtist: {
+          ...state.currentArtist,
+          profile: action.artist,
+        },
+        status: "idle",
+      };
     }
-    case "RECEIVE_ARTIST-ERROR":{
+    case "RECEIVE_ARTIST_ERROR_INFO": {
       return {
         ...state,
-        status:"idle",
-        error: true
-      }
+        status: "error",
+        error: action.error,
+      };
     }
     default: {
       return state;
